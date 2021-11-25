@@ -3,6 +3,17 @@ function isPalindrome(str){
     return str == str2
 }
 
+function getAllSubstrings(str, size) {
+  var i, j, result = [];
+  size = (size || 0);
+  for (i = 0; i < str.length; i++) {
+    for (j = str.length; j - i >= size; j--) {
+      result.push(str.slice(i, j));
+    }
+  }
+  return result;
+}
+
 function longestPalindrome(str){
     let strArr=[];
     let max_length=0
